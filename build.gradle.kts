@@ -24,6 +24,7 @@ dependencies {
     implementation(deps.ktor.serialization)
     implementation(deps.serialization.json)
     implementation(deps.log4j.slf4j)
+    implementation(deps.xmlutil)
     implementation(kotlin("stdlib-jdk8"))
     detektPlugins(deps.detekt.formatting)
 }
