@@ -12,6 +12,7 @@ dependencyResolutionManagement {
             version("kotlin_serialization_json", "1.3.1")
             version("kotest", "5.3.2")
             version("kotlinx", "0.3.2")
+            version("xmlutil", "0.84.3")
 
             library("log4j_slf4j", "org.apache.logging.log4j", "log4j-slf4j-impl").versionRef("log4j")
             library("ktor_client_serialization", "io.ktor", "ktor-client-serialization").versionRef("ktor")
@@ -19,6 +20,7 @@ dependencyResolutionManagement {
             library("ktor_serialization", "io.ktor", "ktor-serialization").versionRef("ktor")
             library("kotlin_test", "org.jetbrains.kotlin", "kotlin-test-junit5").versionRef("kotlin")
             library("serialization_json", "org.jetbrains.kotlinx", "kotlinx-serialization-json").versionRef("kotlin_serialization_json")
+            library("xmlutil", "io.github.pdvrieze.xmlutil", "serialization").versionRef("xmlutil")
 
             library("kotest", "io.kotest", "kotest-assertions-core").versionRef("kotest")
             library("kotest-jvm", "io.kotest", "kotest-assertions-core-jvm").versionRef("kotest")
