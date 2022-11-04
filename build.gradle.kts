@@ -14,17 +14,18 @@ version = "0.1.0"
 
 repositories {
     mavenCentral()
+    maven("https://jitpack.io")
 }
 
 dependencies {
     testImplementation(kotlin("test"))
     testImplementation(deps.kotest)
     testImplementation(deps.kotest.jvm)
-    implementation(deps.ktor.client.serialization)
-    implementation(deps.ktor.serialization)
-    implementation(deps.serialization.json)
+    implementation(deps.ktor.cio)
+    implementation(deps.ktor.client.negotiation)
+    implementation(deps.ktor.client.serialization.xml)
     implementation(deps.log4j.slf4j)
-    implementation(deps.xmlutil)
+    implementation(deps.tmsoft.time)
     implementation(kotlin("stdlib-jdk8"))
     detektPlugins(deps.detekt.formatting)
 }
@@ -40,6 +41,7 @@ tasks.withType<KotlinCompile> {
             "-opt-in=kotlin.RequiresOptIn",
             "-opt-in=kotlinx.serialization.InternalSerializationApi",
             "-opt-in=kotlinx.serialization.ExperimentalSerializationApi",
+            "-Xskip-prerelease-check",
             "-Xcontext-receivers"
         )
     }
