@@ -1,4 +1,4 @@
-package com.turbomates.betbalancer.infrastructure.serilizer
+package com.turbomates.betbalancer.infrastructure.serializer
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializer

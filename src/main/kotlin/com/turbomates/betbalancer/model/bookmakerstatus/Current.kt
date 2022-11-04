@@ -1,7 +1,8 @@
-@file:UseSerializers(OffsetDateTimeSerializer::class)
+@file:UseSerializers(OffsetDateTimeFromLongSerializer::class)
+
 package com.turbomates.betbalancer.model.bookmakerstatus
 
-import com.turbomates.betbalancer.infrastructure.serilizer.OffsetDateTimeSerializer
+import com.turbomates.betbalancer.infrastructure.serializer.OffsetDateTimeFromLongSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.UseSerializers

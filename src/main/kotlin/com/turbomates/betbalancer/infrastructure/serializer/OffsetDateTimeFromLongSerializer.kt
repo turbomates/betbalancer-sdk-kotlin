@@ -1,4 +1,4 @@
-package com.turbomates.betbalancer.infrastructure.serilizer
+package com.turbomates.betbalancer.infrastructure.serializer
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializer
@@ -12,7 +12,7 @@ import java.time.OffsetDateTime
 import java.time.ZoneOffset
 
 @Serializer(forClass = OffsetDateTime::class)
-object OffsetDateTimeSerializer : KSerializer<OffsetDateTime> {
+object OffsetDateTimeFromLongSerializer : KSerializer<OffsetDateTime> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("OffsetDateTime", PrimitiveKind.STRING)
 
     override fun serialize(encoder: Encoder, value: OffsetDateTime) {
