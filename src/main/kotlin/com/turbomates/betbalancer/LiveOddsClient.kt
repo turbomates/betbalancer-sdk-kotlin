@@ -2,8 +2,6 @@ package com.turbomates.betbalancer
 
 import com.turbomates.betbalancer.model.bookmakerstatus.Login
 import io.ktor.network.selector.SelectorManager
-import io.ktor.network.sockets.ServerSocket
-import io.ktor.network.sockets.Socket
 import io.ktor.network.sockets.aSocket
 import io.ktor.network.sockets.openReadChannel
 import io.ktor.network.sockets.openWriteChannel
@@ -13,11 +11,7 @@ import io.ktor.utils.io.writeStringUtf8
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.modules.SerializersModule
-import kotlinx.serialization.serializer
 import nl.adaptivity.xmlutil.serialization.XML
 import org.slf4j.LoggerFactory
 
@@ -42,10 +36,6 @@ class LiveOddsClient(
     private suspend fun login() {
         val login = XML.encodeToString(Login(config.bookmakerId, config.key))
         outputChannel.writeStringUtf8(login)
-    }
-
-    private suspend fun startHandlingMessage() {
-    //    TODO("implement")
     }
 
     data class Config(
