@@ -71,7 +71,7 @@ class BookmakerStatusSerializationTest {
         error.messageFromId shouldBe 12
         error.messageToId shouldBe 15
         error.timestamp shouldBe null
-        error.match.id shouldBe 661373
+        error.match.id shouldBe 661_373
         error.match.isActive shouldBe true
         error.type shouldBe BookmakerStatus.Type.ERROR
     }
