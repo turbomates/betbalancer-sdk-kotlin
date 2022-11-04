@@ -7,7 +7,6 @@ import io.ktor.client.call.body
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import io.ktor.client.statement.HttpResponse
 
 class PreMatchAPI(val config: PreMatchConfig) {
     suspend inline fun <reified T> get(path: String, parameters: HttpRequestBuilder.() -> Unit = {}): T {

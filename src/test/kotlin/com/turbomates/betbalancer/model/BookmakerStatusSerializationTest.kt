@@ -10,7 +10,6 @@ import com.turbomates.betbalancer.model.bookmakerstatus.Login
 import io.kotest.matchers.shouldBe
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
-import nl.adaptivity.xmlutil.serialization.XML
 import org.junit.jupiter.api.Test
 import java.time.OffsetDateTime
 import java.time.ZoneOffset
@@ -71,7 +70,7 @@ class BookmakerStatusSerializationTest {
         error.messageFromId shouldBe 12
         error.messageToId shouldBe 15
         error.timestamp shouldBe null
-        error.match.id shouldBe 661373
+        error.match.id shouldBe 661_373
         error.match.isActive shouldBe true
         error.type shouldBe BookmakerStatus.Type.ERROR
     }
