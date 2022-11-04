@@ -1,12 +1,9 @@
-@file:UseSerializers(OffsetDateTimeFromLongSerializer::class, BooleanSerializer::class)
-
 package com.turbomates.betbalancer.model.bookmakerstatus
 
-import com.turbomates.betbalancer.infrastructure.serializer.BooleanSerializer
-import com.turbomates.betbalancer.infrastructure.serializer.OffsetDateTimeFromLongSerializer
+import com.turbomates.betbalancer.infrastructure.serializer.BooleanIntSerializer
+import com.turbomates.betbalancer.infrastructure.serializer.OffsetDateTimeUNIXTimestampSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.UseSerializers
 import nl.adaptivity.xmlutil.serialization.XmlElement
 import java.time.OffsetDateTime
 
@@ -22,6 +19,7 @@ data class ErrorRecovery(
     val messageFromId: Long? = null,
     @SerialName("msgto")
     val messageToId: Long? = null,
+    @Serializable(with = OffsetDateTimeUNIXTimestampSerializer::class)
     @SerialName("timestamp")
     val timestamp: OffsetDateTime? = null,
 ) : BookmakerStatus {
@@ -32,6 +30,7 @@ data class ErrorRecovery(
     data class Match(
         @SerialName("matchid")
         val id: Long,
+        @Serializable(with = BooleanIntSerializer::class)
         @SerialName("active")
         val isActive: Boolean
     )

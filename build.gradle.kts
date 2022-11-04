@@ -23,6 +23,7 @@ dependencies {
     testImplementation(deps.kotest.jvm)
     implementation(deps.ktor.cio)
     implementation(deps.ktor.client.negotiation)
+    implementation(deps.ktor.network)
     implementation(deps.ktor.client.serialization.xml)
     implementation(deps.log4j.slf4j)
     implementation(deps.tmsoft.time)

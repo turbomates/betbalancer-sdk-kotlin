@@ -10,8 +10,8 @@ import com.turbomates.betbalancer.model.bookmakerstatus.Login
 import io.kotest.matchers.shouldBe
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
-import nl.adaptivity.xmlutil.serialization.XML
 import org.junit.jupiter.api.Test
+import java.time.Instant
 import java.time.OffsetDateTime
 import java.time.ZoneOffset
 
@@ -36,18 +36,18 @@ class BookmakerStatusSerializationTest {
         val now = OffsetDateTime.now()
         val current = Current(1, now, Current.Match(1))
         val plain = xml.encodeToString(current)
+        val timestmapNow = now.toInstant().toEpochMilli()
         plain shouldBe """
-            <BookmakerStatus bookmakerid="1" timestamp="${now.toEpochSecond()}" type="current"><Match matchid="1"/></BookmakerStatus>
+            <BookmakerStatus bookmakerid="1" timestamp="$timestmapNow" type="current"><Match matchid="1"/></BookmakerStatus>
         """.trimIndent()
     }
 
     @Test
     fun `current deserialization`() {
-        val now = OffsetDateTime.now(ZoneOffset.UTC).toEpochSecond()
-        val plain = """<BookmakerStatus bookmakerid="1" timestamp="$now" type="current"><Match matchid="1"/></BookmakerStatus>"""
+        val plain = """<BookmakerStatus bookmakerid="1" timestamp="0" type="current"><Match matchid="1"/></BookmakerStatus>"""
         val current = xml.decodeFromString<Current>(plain)
         current.bookmakerId shouldBe 1
-        current.timestamp.toEpochSecond() shouldBe now
+        current.timestamp shouldBe OffsetDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC)
         current.match.id shouldBe 1
         current.type shouldBe BookmakerStatus.Type.CURRENT
     }
