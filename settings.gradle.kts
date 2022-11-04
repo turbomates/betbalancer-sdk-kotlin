@@ -19,6 +19,7 @@ dependencyResolutionManagement {
             library("ktor_client_serialization_xml", "io.ktor", "ktor-serialization-kotlinx-xml").versionRef("ktor")
             library("ktor_cio", "io.ktor", "ktor-client-cio").versionRef("ktor")
             library("ktor_client_auth_jvm", "io.ktor", "ktor-client-auth-jvm").versionRef("ktor")
+            library("ktor_network", "io.ktor", "ktor-network").versionRef("ktor")
             library("kotlin_test", "org.jetbrains.kotlin", "kotlin-test-junit5").versionRef("kotlin")
             library("tmsoft_time", "com.github.turbomates", "kotlin-time").versionRef("tmsoft_time")
 

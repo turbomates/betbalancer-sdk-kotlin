@@ -8,15 +8,15 @@ import java.time.OffsetDateTime
 
 @Serializable
 @SerialName("BookmakerStatus")
-data class Current(
+data class Meta(
     @SerialName("bookmakerid")
     override val bookmakerId: Int,
     @Serializable(with = OffsetDateTimeUTCTimestampSerializer::class)
     val timestamp: OffsetDateTime,
-    val match: Match
+    val matches: List<Match>
 ) : BookmakerStatus {
     @XmlElement(false)
-    override val type = BookmakerStatus.Type.CURRENT
+    override val type = BookmakerStatus.Type.META
 
     @Serializable
     data class Match(@SerialName("matchid") val id: Long)
