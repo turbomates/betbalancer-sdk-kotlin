@@ -15,7 +15,7 @@ import java.time.Instant
 import java.time.OffsetDateTime
 import java.time.ZoneOffset
 
-class BookmakerStatusSerializationTest {
+class BookmakerStatusTest {
     @Test
     fun `login serialization`() {
         val login = Login(1, "testKey")

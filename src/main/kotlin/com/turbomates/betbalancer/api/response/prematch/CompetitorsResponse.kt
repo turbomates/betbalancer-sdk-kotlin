@@ -1,17 +1,19 @@
 package com.turbomates.betbalancer.api.response.prematch
 
-import com.turbomates.betbalancer.model.Sport
+import com.turbomates.betbalancer.model.Competitor
 import com.turbomates.betbalancer.model.Timestamp
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("BetbalancerBetData")
-data class SportsResponse(
+data class CompetitorsResponse(
     @SerialName("Timestamp")
     val timestamp: Timestamp,
-    val sports: Sports
+    val competitors: Competitors
 ) {
+
     @Serializable
-    data class Sports(val list: List<Sport>)
+    data class Competitors(val list: List<Competitor>)
 }
+
