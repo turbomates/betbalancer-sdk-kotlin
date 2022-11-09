@@ -1,8 +1,7 @@
 @file:Suppress("SpellCheckingInspection")
 
-package com.turbomates.betbalancer.api.response.prematch
+package com.turbomates.betbalancer.api.prematch.response
 
-import com.turbomates.betbalancer.api.prematch.response.OutcomesResponse
 import com.turbomates.betbalancer.infrastructure.xml
 import com.turbomates.betbalancer.model.Names
 import com.turbomates.betbalancer.model.Outcome

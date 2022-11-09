@@ -1,6 +1,5 @@
-package com.turbomates.betbalancer.api.response.prematch
+package com.turbomates.betbalancer.api.prematch.response
 
-import com.turbomates.betbalancer.api.prematch.response.CompetitorsResponse
 import com.turbomates.betbalancer.infrastructure.xml
 import com.turbomates.betbalancer.model.Competitor
 import com.turbomates.betbalancer.model.Names
