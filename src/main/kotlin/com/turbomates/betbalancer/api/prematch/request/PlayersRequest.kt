@@ -1,4 +1,4 @@
-package com.turbomates.betbalancer.api.request.prematch
+package com.turbomates.betbalancer.api.prematch.request
 
 /**
  * Get data for the specified players (max. 6 in the same request)

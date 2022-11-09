@@ -1,4 +1,4 @@
-package com.turbomates.betbalancer.api.response.prematch
+package com.turbomates.betbalancer.api.prematch.response
 
 import com.turbomates.betbalancer.model.Outcome
 import com.turbomates.betbalancer.model.Timestamp

@@ -1,5 +1,6 @@
 package com.turbomates.betbalancer.api.response.prematch
 
+import com.turbomates.betbalancer.api.prematch.response.PlayersResponse
 import com.turbomates.betbalancer.infrastructure.xml
 import com.turbomates.betbalancer.model.Names
 import com.turbomates.betbalancer.model.Player

@@ -1,4 +1,4 @@
-package com.turbomates.betbalancer.api.request.prematch
+package com.turbomates.betbalancer.api.prematch.request
 
 data class MarketsRequest(
     val languages: List<String>? = null,
