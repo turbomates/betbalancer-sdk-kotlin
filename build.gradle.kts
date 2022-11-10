@@ -28,6 +28,7 @@ dependencies {
     implementation(deps.log4j.slf4j)
     implementation(deps.tmsoft.time)
     implementation(kotlin("stdlib-jdk8"))
+    implementation(deps.xmlutil)
     detektPlugins(deps.detekt.formatting)
 }
 

@@ -1,6 +1,6 @@
 package com.turbomates.betbalancer
 
-import com.turbomates.betbalancer.model.bookmakerstatus.Login
+import com.turbomates.betbalancer.model.liveodds.bookmakerstatus.Login
 import io.ktor.network.selector.SelectorManager
 import io.ktor.network.sockets.aSocket
 import io.ktor.network.sockets.openReadChannel

@@ -1,4 +1,4 @@
-package com.turbomates.betbalancer.model.bookmakerstatus
+package com.turbomates.betbalancer.model.liveodds.bookmakerstatus
 
 import com.turbomates.betbalancer.infrastructure.serializer.BooleanIntSerializer
 import com.turbomates.betbalancer.infrastructure.serializer.OffsetDateTimeUNIXTimestampSerializer
