@@ -28,6 +28,7 @@ dependencyResolutionManagement {
             plugin("detekt", "io.gitlab.arturbosch.detekt").versionRef("detekt")
             library("detekt_formatting", "io.gitlab.arturbosch.detekt", "detekt-formatting").versionRef("detekt")
             plugin("kotlin_serialization", "org.jetbrains.kotlin.plugin.serialization").versionRef("kotlin")
+            library("xmlutil", "io.github.pdvrieze.xmlutil", "serialization").version("0.84.3")
         }
     }
 }

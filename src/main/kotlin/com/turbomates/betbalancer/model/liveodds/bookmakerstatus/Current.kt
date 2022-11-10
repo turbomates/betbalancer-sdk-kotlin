@@ -1,4 +1,4 @@
-package com.turbomates.betbalancer.model.bookmakerstatus
+package com.turbomates.betbalancer.model.liveodds.bookmakerstatus
 
 import com.turbomates.betbalancer.infrastructure.serializer.OffsetDateTimeUTCTimestampSerializer
 import kotlinx.serialization.SerialName
@@ -8,15 +8,15 @@ import java.time.OffsetDateTime
 
 @Serializable
 @SerialName("BookmakerStatus")
-data class Meta(
+data class Current(
     @SerialName("bookmakerid")
     override val bookmakerId: Int,
     @Serializable(with = OffsetDateTimeUTCTimestampSerializer::class)
     val timestamp: OffsetDateTime,
-    val matches: List<Match>
+    val match: Match
 ) : BookmakerStatus {
     @XmlElement(false)
-    override val type = BookmakerStatus.Type.META
+    override val type = BookmakerStatus.Type.CURRENT
 
     @Serializable
     data class Match(@SerialName("matchid") val id: Long)

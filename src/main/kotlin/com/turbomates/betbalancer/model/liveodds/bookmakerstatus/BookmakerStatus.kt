@@ -1,9 +1,8 @@
-package com.turbomates.betbalancer.model.bookmakerstatus
+package com.turbomates.betbalancer.model.liveodds.bookmakerstatus
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@Suppress("unused")
 interface BookmakerStatus {
     val bookmakerId: Int
     val type: Type
