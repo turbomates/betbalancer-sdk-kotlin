@@ -5,6 +5,7 @@ import com.turbomates.betbalancer.api.client
 import com.turbomates.betbalancer.api.prematch.request.CategoriesRequest
 import com.turbomates.betbalancer.api.prematch.request.CompetitorsRequest
 import com.turbomates.betbalancer.api.prematch.request.MarketsRequest
+import com.turbomates.betbalancer.api.prematch.request.MatchRequest
 import com.turbomates.betbalancer.api.prematch.request.OutcomesRequest
 import com.turbomates.betbalancer.api.prematch.request.OutrightsRequest
 import com.turbomates.betbalancer.api.prematch.request.PlayersRequest
@@ -14,6 +15,7 @@ import com.turbomates.betbalancer.api.prematch.request.TournamentsRequest
 import com.turbomates.betbalancer.api.prematch.response.CategoriesResponse
 import com.turbomates.betbalancer.api.prematch.response.CompetitorsResponse
 import com.turbomates.betbalancer.api.prematch.response.MarketsResponse
+import com.turbomates.betbalancer.api.prematch.response.MatchesResponse
 import com.turbomates.betbalancer.api.prematch.response.OutcomesResponse
 import com.turbomates.betbalancer.api.prematch.response.PlayersResponse
 import com.turbomates.betbalancer.api.prematch.response.SpecsResponse
@@ -107,6 +109,17 @@ class PreMatchAPI(val config: PreMatchConfig) {
         return get("/export/getOutcomes") {
             parameter("lang", parameters.languages?.joinToString())
             parameter("outcomeId", parameters.outcomeIds.joinToString())
+        }
+    }
+
+    suspend fun match(request: MatchRequest.() -> Unit = {}): MatchesResponse {
+        val parameters = MatchRequest().apply { request }
+        return get("/export/getMatch") {
+            parameter("matchIdList", parameters.matchIdList?.joinToString())
+            parameter("matchId", parameters.matchId?.toString())
+            parameter("sportId", parameters.sportId?.toString())
+            parameter("categoryId", parameters.categoryId?.toString())
+            parameter("tournamentId", parameters.tournamentId?.toString())
         }
     }
 }
