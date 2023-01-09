@@ -71,6 +71,7 @@ data class MatchesResponse(
         ) {
             @Serializable
             data class Competitors(val list: List<CompetitorNames>)
+
             @Serializable
             data class DateInfo(val matchDate: MatchDate) {
                 @Serializable
@@ -79,7 +80,6 @@ data class MatchesResponse(
                     val changed: Int,
                     @XmlValue(true) val value: String
                 )
-
             }
 
             @Serializable
@@ -90,9 +90,9 @@ data class MatchesResponse(
 
             @Serializable
             data class NeutralGround(@XmlValue(true) val value: Int)
+
             @Serializable
             data class NumberOfSets(@XmlValue(true) val value: Int)
-
         }
 
         @Serializable
@@ -141,6 +141,7 @@ data class MatchesResponse(
             val type: Int,
             val list: List<Name>
         )
+
         @Serializable
         @SerialName("Text")
         data class Name(

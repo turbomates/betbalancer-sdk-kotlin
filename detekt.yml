@@ -232,7 +232,7 @@ style:
     active: true
   UnderscoresInNumericLiterals:
     active: true
-    acceptableLength: 5
+    acceptableLength: 10
   UnnecessaryAnnotationUseSiteTarget:
     active: true
   UnnecessaryBackticks:
