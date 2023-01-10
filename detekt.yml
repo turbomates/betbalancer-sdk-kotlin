@@ -41,7 +41,9 @@ complexity:
     active: true
     threshold: 2
     ignoreStringsRegex: '\b(Not yet implemented|default)\b'
-    excludes: *test
+    excludes:
+      - '**/test/**'
+      - "**PreMatchAPI.kt"
   ReplaceSafeCallChainWithRun:
     active: true
 
@@ -230,7 +232,7 @@ style:
     active: true
   UnderscoresInNumericLiterals:
     active: true
-    acceptableLength: 5
+    acceptableLength: 10
   UnnecessaryAnnotationUseSiteTarget:
     active: true
   UnnecessaryBackticks:

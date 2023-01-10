@@ -1,18 +1,19 @@
 @file:Suppress("SpellCheckingInspection")
 
-package com.turbomates.betbalancer.api.response.prematch
+package com.turbomates.betbalancer.api.prematch.response
 
 import com.turbomates.betbalancer.infrastructure.xml
+import com.turbomates.betbalancer.model.Names
+import com.turbomates.betbalancer.model.Names.Name
+import com.turbomates.betbalancer.model.Sport
 import com.turbomates.betbalancer.model.Timestamp
-import com.turbomates.betbalancer.model.sport.Name
-import com.turbomates.betbalancer.model.sport.Sport
 import io.kotest.matchers.shouldBe
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import org.junit.jupiter.api.Test
 import java.time.OffsetDateTime
 
-class SportsResponseSerializationTest {
+class SportsResponseTest {
     @Test
     fun `sports deserialization`() {
         val response = xml.decodeFromString<SportsResponse>(
@@ -21,7 +22,7 @@ class SportsResponseSerializationTest {
         response.sports.list.isNotEmpty() shouldBe true
         response.sports.list.first() shouldBe Sport(
             1,
-            Sport.Names(
+            Names(
                 listOf(
                     Name("BET", Name.Value("Soccer")),
                     Name("it", Name.Value("Calcio")),
@@ -32,9 +33,13 @@ class SportsResponseSerializationTest {
     }
 
     @Test
-    fun `login serialization`() {
+    fun `sports serialization`() {
         val time = "2022-11-04T09:31:07.140Z"
-        val response = SportsResponse(Timestamp(OffsetDateTime.parse(time)), SportsResponse.Sports(listOf(Sport(222, Sport.Names(listOf(Name("en", Name.Value("Soccer"))))))))
+        val response = SportsResponse(Timestamp(OffsetDateTime.parse(time)), SportsResponse.Sports(listOf(
+            Sport(222, Names(listOf(
+                Name("en", Name.Value("Soccer"))
+            )))
+        )))
         val plain = xml.encodeToString(response)
         plain shouldBe """<BetbalancerBetData><Timestamp CreatedTime="$time" TimeZone="UTC"/><Sports><Sport BetbalancerSportID="222"><Texts><Text Language="en"><Value>Soccer</Value></Text></Texts></Sport></Sports></BetbalancerBetData>"""
     }

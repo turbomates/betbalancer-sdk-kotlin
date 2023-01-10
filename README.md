@@ -4,4 +4,6 @@
 ![Detekt](https://github.com/turbomates/kotlin-test/actions/workflows/reviewdog.yml/badge.svg)
 
 # [BetBalancer](https://betbalancer.com/) Kotlin SDK
-WIP
+
+## Usage
+### Languages correspond to [ISO_639-1](https://en.wikipedia.org/wiki/ISO_639-1)

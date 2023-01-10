@@ -1,4 +1,4 @@
-package com.turbomates.betbalancer.model.sport
+package com.turbomates.betbalancer.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -9,10 +9,5 @@ data class Sport(
     @SerialName("BetbalancerSportID")
     val id: Int,
     val translatedNames: Names
-) {
-    @Serializable
-    @SerialName("Texts")
-    data class Names(val list: List<Name>)
-}
-
+)
 
